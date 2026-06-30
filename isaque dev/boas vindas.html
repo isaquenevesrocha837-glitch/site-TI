@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo</title>
+    <style>
+        body {
+            background-color: #000000; /* Fundo totalmente preto */
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .texto-boas-vindas {
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            gap: 1px;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            /* Animação: surge em 1.5s, fica visível, e some em 1.5s antes do fim */
+            animation: aparecerESumir 4s ease-in-out forwards;
+        }
+
+        @keyframes aparecerESumir {
+            0% { opacity: 0; transform: scale(0.9); }
+            30% { opacity: 1; transform: scale(1); }  /* Surge e estabiliza */
+            70% { opacity: 1; transform: scale(1); }  /* Fica visível por um tempo */
+            100% { opacity: 0; transform: scale(1.05); } /* Some suavemente expandindo */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="texto-boas-vindas">
+        <h2>Reiniciado com sucesso.</h2>
+        <h1>Seja bem-vindo, Victor Hugo!</h1> 
+    </div>
+
+    <script>
+        // Depois de 4.5 segundos (tempo do texto aparecer e sumir), vai para a página inicial
+        setTimeout(() => {
+            window.location.href = "home.html"; // <-- Nome da sua página inicial real
+        }, 4500);
+    </script>
+
+</body>
+</html>
